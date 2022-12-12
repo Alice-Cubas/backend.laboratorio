@@ -1,0 +1,3660 @@
+
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "recipeasy",
+    "version": "0.0.1",
+    "description": "Recipeasy",
+    "contact": {
+      "name": "Alice-Cubas",
+      "email": "alicecubas@leaderrealty.net"
+    }
+  },
+  "paths": {
+    "/ingredientes/count": {
+      "get": {
+        "x-controller-name": "IngredientesController",
+        "x-operation-name": "count",
+        "tags": [
+          "IngredientesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ingredientes model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Ingredientes.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Ingredientes>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "IngredientesController.count"
+      }
+    },
+    "/ingredientes/{id}/recetas-x-ingredientes": {
+      "post": {
+        "x-controller-name": "IngredientesRecetasXIngredientesController",
+        "x-operation-name": "create",
+        "tags": [
+          "IngredientesRecetasXIngredientesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ingredientes model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecetasXIngredientes"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewRecetasXIngredientesInIngredientes"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "IngredientesRecetasXIngredientesController.create"
+      },
+      "patch": {
+        "x-controller-name": "IngredientesRecetasXIngredientesController",
+        "x-operation-name": "patch",
+        "tags": [
+          "IngredientesRecetasXIngredientesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ingredientes.RecetasXIngredientes PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "RecetasXIngredientes.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<RecetasXIngredientes>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecetasXIngredientesPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "IngredientesRecetasXIngredientesController.patch"
+      },
+      "get": {
+        "x-controller-name": "IngredientesRecetasXIngredientesController",
+        "x-operation-name": "find",
+        "tags": [
+          "IngredientesRecetasXIngredientesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Ingredientes has many RecetasXIngredientes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RecetasXIngredientes"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "IngredientesRecetasXIngredientesController.find"
+      },
+      "delete": {
+        "x-controller-name": "IngredientesRecetasXIngredientesController",
+        "x-operation-name": "delete",
+        "tags": [
+          "IngredientesRecetasXIngredientesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ingredientes.RecetasXIngredientes DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "RecetasXIngredientes.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<RecetasXIngredientes>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "IngredientesRecetasXIngredientesController.delete"
+      }
+    },
+    "/ingredientes/{id}": {
+      "put": {
+        "x-controller-name": "IngredientesController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "IngredientesController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Ingredientes PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ingredientes"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "IngredientesController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "IngredientesController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "IngredientesController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Ingredientes PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IngredientesPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "IngredientesController.updateById"
+      },
+      "get": {
+        "x-controller-name": "IngredientesController",
+        "x-operation-name": "findById",
+        "tags": [
+          "IngredientesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ingredientes model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngredientesWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ingredientes.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "IngredientesController.findById"
+      },
+      "delete": {
+        "x-controller-name": "IngredientesController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "IngredientesController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Ingredientes DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "IngredientesController.deleteById"
+      }
+    },
+    "/ingredientes": {
+      "post": {
+        "x-controller-name": "IngredientesController",
+        "x-operation-name": "create",
+        "tags": [
+          "IngredientesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ingredientes model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ingredientes"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewIngredientes"
+              }
+            }
+          }
+        },
+        "operationId": "IngredientesController.create"
+      },
+      "patch": {
+        "x-controller-name": "IngredientesController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "IngredientesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ingredientes PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Ingredientes.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Ingredientes>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IngredientesPartial"
+              }
+            }
+          }
+        },
+        "operationId": "IngredientesController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "IngredientesController",
+        "x-operation-name": "find",
+        "tags": [
+          "IngredientesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Ingredientes model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IngredientesWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ingredientes.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "IngredientesController.find"
+      }
+    },
+    "/recetas/count": {
+      "get": {
+        "x-controller-name": "RecetasController",
+        "x-operation-name": "count",
+        "tags": [
+          "RecetasController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Recetas model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Recetas.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Recetas>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "RecetasController.count"
+      }
+    },
+    "/recetas/{id}/recetas-x-ingredientes": {
+      "post": {
+        "x-controller-name": "RecetasRecetasXIngredientesController",
+        "x-operation-name": "create",
+        "tags": [
+          "RecetasRecetasXIngredientesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Recetas model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecetasXIngredientes"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewRecetasXIngredientesInRecetas"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "RecetasRecetasXIngredientesController.create"
+      },
+      "patch": {
+        "x-controller-name": "RecetasRecetasXIngredientesController",
+        "x-operation-name": "patch",
+        "tags": [
+          "RecetasRecetasXIngredientesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Recetas.RecetasXIngredientes PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "RecetasXIngredientes.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<RecetasXIngredientes>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecetasXIngredientesPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "RecetasRecetasXIngredientesController.patch"
+      },
+      "get": {
+        "x-controller-name": "RecetasRecetasXIngredientesController",
+        "x-operation-name": "find",
+        "tags": [
+          "RecetasRecetasXIngredientesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Recetas has many RecetasXIngredientes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RecetasXIngredientes"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "RecetasRecetasXIngredientesController.find"
+      },
+      "delete": {
+        "x-controller-name": "RecetasRecetasXIngredientesController",
+        "x-operation-name": "delete",
+        "tags": [
+          "RecetasRecetasXIngredientesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Recetas.RecetasXIngredientes DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "RecetasXIngredientes.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<RecetasXIngredientes>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "RecetasRecetasXIngredientesController.delete"
+      }
+    },
+    "/recetas/{id}/tipo-recetas": {
+      "post": {
+        "x-controller-name": "RecetasTipoRecetaController",
+        "x-operation-name": "create",
+        "tags": [
+          "RecetasTipoRecetaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Recetas model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoReceta"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewTipoRecetaInRecetas"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "RecetasTipoRecetaController.create"
+      },
+      "patch": {
+        "x-controller-name": "RecetasTipoRecetaController",
+        "x-operation-name": "patch",
+        "tags": [
+          "RecetasTipoRecetaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Recetas.TipoReceta PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "TipoReceta.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<TipoReceta>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoRecetaPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "RecetasTipoRecetaController.patch"
+      },
+      "get": {
+        "x-controller-name": "RecetasTipoRecetaController",
+        "x-operation-name": "find",
+        "tags": [
+          "RecetasTipoRecetaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Recetas has many TipoReceta",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TipoReceta"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "RecetasTipoRecetaController.find"
+      },
+      "delete": {
+        "x-controller-name": "RecetasTipoRecetaController",
+        "x-operation-name": "delete",
+        "tags": [
+          "RecetasTipoRecetaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Recetas.TipoReceta DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "TipoReceta.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<TipoReceta>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "RecetasTipoRecetaController.delete"
+      }
+    },
+    "/recetas/{id}": {
+      "put": {
+        "x-controller-name": "RecetasController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "RecetasController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Recetas PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Recetas"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "RecetasController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "RecetasController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "RecetasController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Recetas PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecetasPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "RecetasController.updateById"
+      },
+      "get": {
+        "x-controller-name": "RecetasController",
+        "x-operation-name": "findById",
+        "tags": [
+          "RecetasController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Recetas model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecetasWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Recetas.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "RecetasController.findById"
+      },
+      "delete": {
+        "x-controller-name": "RecetasController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "RecetasController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Recetas DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "RecetasController.deleteById"
+      }
+    },
+    "/recetas": {
+      "post": {
+        "x-controller-name": "RecetasController",
+        "x-operation-name": "create",
+        "tags": [
+          "RecetasController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Recetas model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Recetas"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewRecetas"
+              }
+            }
+          }
+        },
+        "operationId": "RecetasController.create"
+      },
+      "patch": {
+        "x-controller-name": "RecetasController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "RecetasController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Recetas PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Recetas.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Recetas>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecetasPartial"
+              }
+            }
+          }
+        },
+        "operationId": "RecetasController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "RecetasController",
+        "x-operation-name": "find",
+        "tags": [
+          "RecetasController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Recetas model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RecetasWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Recetas.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "RecetasController.find"
+      }
+    },
+    "/recetas-x-ingredientes/count": {
+      "get": {
+        "x-controller-name": "RecetasXIngredientesController",
+        "x-operation-name": "count",
+        "tags": [
+          "RecetasXIngredientesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "RecetasXIngredientes model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "RecetasXIngredientes.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<RecetasXIngredientes>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "RecetasXIngredientesController.count"
+      }
+    },
+    "/recetas-x-ingredientes/{id}/ingredientes": {
+      "get": {
+        "x-controller-name": "RecetasXIngredientesIngredientesController",
+        "x-operation-name": "getIngredientes",
+        "tags": [
+          "RecetasXIngredientesIngredientesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ingredientes belonging to RecetasXIngredientes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ingredientes"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "RecetasXIngredientesIngredientesController.getIngredientes"
+      }
+    },
+    "/recetas-x-ingredientes/{id}/recetas": {
+      "get": {
+        "x-controller-name": "RecetasXIngredientesRecetasController",
+        "x-operation-name": "getRecetas",
+        "tags": [
+          "RecetasXIngredientesRecetasController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Recetas belonging to RecetasXIngredientes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Recetas"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "RecetasXIngredientesRecetasController.getRecetas"
+      }
+    },
+    "/recetas-x-ingredientes/{id}": {
+      "put": {
+        "x-controller-name": "RecetasXIngredientesController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "RecetasXIngredientesController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "RecetasXIngredientes PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecetasXIngredientes"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "RecetasXIngredientesController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "RecetasXIngredientesController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "RecetasXIngredientesController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "RecetasXIngredientes PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecetasXIngredientesPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "RecetasXIngredientesController.updateById"
+      },
+      "get": {
+        "x-controller-name": "RecetasXIngredientesController",
+        "x-operation-name": "findById",
+        "tags": [
+          "RecetasXIngredientesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "RecetasXIngredientes model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecetasXIngredientesWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecetasXIngredientes.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "RecetasXIngredientesController.findById"
+      },
+      "delete": {
+        "x-controller-name": "RecetasXIngredientesController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "RecetasXIngredientesController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "RecetasXIngredientes DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "RecetasXIngredientesController.deleteById"
+      }
+    },
+    "/recetas-x-ingredientes": {
+      "post": {
+        "x-controller-name": "RecetasXIngredientesController",
+        "x-operation-name": "create",
+        "tags": [
+          "RecetasXIngredientesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "RecetasXIngredientes model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecetasXIngredientes"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewRecetasXIngredientes"
+              }
+            }
+          }
+        },
+        "operationId": "RecetasXIngredientesController.create"
+      },
+      "patch": {
+        "x-controller-name": "RecetasXIngredientesController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "RecetasXIngredientesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "RecetasXIngredientes PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "RecetasXIngredientes.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<RecetasXIngredientes>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecetasXIngredientesPartial"
+              }
+            }
+          }
+        },
+        "operationId": "RecetasXIngredientesController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "RecetasXIngredientesController",
+        "x-operation-name": "find",
+        "tags": [
+          "RecetasXIngredientesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of RecetasXIngredientes model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RecetasXIngredientesWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecetasXIngredientes.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "RecetasXIngredientesController.find"
+      }
+    },
+    "/tipo-recetas/count": {
+      "get": {
+        "x-controller-name": "TipoRecetaController",
+        "x-operation-name": "count",
+        "tags": [
+          "TipoRecetaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "TipoReceta model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "TipoReceta.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<TipoReceta>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "TipoRecetaController.count"
+      }
+    },
+    "/tipo-recetas/{id}/recetas": {
+      "get": {
+        "x-controller-name": "TipoRecetaRecetasController",
+        "x-operation-name": "getRecetas",
+        "tags": [
+          "TipoRecetaRecetasController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Recetas belonging to TipoReceta",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Recetas"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "TipoRecetaRecetasController.getRecetas"
+      }
+    },
+    "/tipo-recetas/{id}": {
+      "put": {
+        "x-controller-name": "TipoRecetaController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "TipoRecetaController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "TipoReceta PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoReceta"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "TipoRecetaController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "TipoRecetaController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "TipoRecetaController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "TipoReceta PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoRecetaPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "TipoRecetaController.updateById"
+      },
+      "get": {
+        "x-controller-name": "TipoRecetaController",
+        "x-operation-name": "findById",
+        "tags": [
+          "TipoRecetaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "TipoReceta model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoRecetaWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoReceta.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "TipoRecetaController.findById"
+      },
+      "delete": {
+        "x-controller-name": "TipoRecetaController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "TipoRecetaController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "TipoReceta DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "TipoRecetaController.deleteById"
+      }
+    },
+    "/tipo-recetas": {
+      "post": {
+        "x-controller-name": "TipoRecetaController",
+        "x-operation-name": "create",
+        "tags": [
+          "TipoRecetaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "TipoReceta model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoReceta"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewTipoReceta"
+              }
+            }
+          }
+        },
+        "operationId": "TipoRecetaController.create"
+      },
+      "patch": {
+        "x-controller-name": "TipoRecetaController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "TipoRecetaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "TipoReceta PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "TipoReceta.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<TipoReceta>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoRecetaPartial"
+              }
+            }
+          }
+        },
+        "operationId": "TipoRecetaController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "TipoRecetaController",
+        "x-operation-name": "find",
+        "tags": [
+          "TipoRecetaController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of TipoReceta model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TipoRecetaWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoReceta.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "TipoRecetaController.find"
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "RecetasXIngredientes": {
+        "title": "RecetasXIngredientes",
+        "type": "object",
+        "properties": {
+          "idIngrediente": {
+            "type": "string"
+          },
+          "cantidad": {
+            "type": "number"
+          },
+          "idReceta": {
+            "type": "string"
+          },
+          "idIngredientes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "idIngrediente",
+          "cantidad"
+        ],
+        "additionalProperties": false
+      },
+      "NewRecetasXIngredientesInIngredientes": {
+        "title": "NewRecetasXIngredientesInIngredientes",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<RecetasXIngredientes, 'idIngrediente'>, 'idIngrediente'>, schemaOptions: { title: 'NewRecetasXIngredientesInIngredientes', exclude: [ 'idIngrediente' ], optional: [ 'idIngrediente' ] })",
+        "properties": {
+          "cantidad": {
+            "type": "number"
+          },
+          "idReceta": {
+            "type": "string"
+          },
+          "idIngredientes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "cantidad"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<RecetasXIngredientes, 'idIngrediente'>, 'idIngrediente'>"
+      },
+      "RecetasXIngredientesPartial": {
+        "title": "RecetasXIngredientesPartial",
+        "type": "object",
+        "description": "(tsType: Partial<RecetasXIngredientes>, schemaOptions: { partial: true })",
+        "properties": {
+          "idIngrediente": {
+            "type": "string"
+          },
+          "cantidad": {
+            "type": "number"
+          },
+          "idReceta": {
+            "type": "string"
+          },
+          "idIngredientes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<RecetasXIngredientes>"
+      },
+      "Ingredientes": {
+        "title": "Ingredientes",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "calorias": {
+            "type": "number"
+          },
+          "colesterol": {
+            "type": "number"
+          },
+          "sodio": {
+            "type": "number"
+          },
+          "fibra": {
+            "type": "number"
+          },
+          "azucares": {
+            "type": "number"
+          },
+          "proteinas": {
+            "type": "number"
+          },
+          "grasasSaturadas": {
+            "type": "number"
+          },
+          "grasasTrans": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "nombre",
+          "calorias",
+          "colesterol",
+          "sodio",
+          "fibra",
+          "azucares",
+          "proteinas",
+          "grasasSaturadas",
+          "grasasTrans"
+        ],
+        "additionalProperties": false
+      },
+      "NewIngredientes": {
+        "title": "NewIngredientes",
+        "type": "object",
+        "description": "(tsType: Omit<Ingredientes, 'id'>, schemaOptions: { title: 'NewIngredientes', exclude: [ 'id' ] })",
+        "properties": {
+          "nombre": {
+            "type": "string"
+          },
+          "calorias": {
+            "type": "number"
+          },
+          "colesterol": {
+            "type": "number"
+          },
+          "sodio": {
+            "type": "number"
+          },
+          "fibra": {
+            "type": "number"
+          },
+          "azucares": {
+            "type": "number"
+          },
+          "proteinas": {
+            "type": "number"
+          },
+          "grasasSaturadas": {
+            "type": "number"
+          },
+          "grasasTrans": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "nombre",
+          "calorias",
+          "colesterol",
+          "sodio",
+          "fibra",
+          "azucares",
+          "proteinas",
+          "grasasSaturadas",
+          "grasasTrans"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Ingredientes, 'id'>"
+      },
+      "TipoRecetaWithRelations": {
+        "title": "TipoRecetaWithRelations",
+        "type": "object",
+        "description": "(tsType: TipoRecetaWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "esVegana": {
+            "type": "boolean"
+          },
+          "esVegetariana": {
+            "type": "boolean"
+          },
+          "esDiabetica": {
+            "type": "boolean"
+          },
+          "esRapida": {
+            "type": "boolean"
+          },
+          "esFitness": {
+            "type": "boolean"
+          },
+          "sinLactosa": {
+            "type": "boolean"
+          },
+          "sinGluten": {
+            "type": "boolean"
+          },
+          "sinSodio": {
+            "type": "boolean"
+          },
+          "idReceta": {
+            "type": "string"
+          },
+          "Receta": {
+            "$ref": "#/components/schemas/RecetasWithRelations"
+          }
+        },
+        "required": [
+          "esVegana",
+          "esVegetariana",
+          "esDiabetica",
+          "esRapida",
+          "esFitness",
+          "sinLactosa",
+          "sinGluten",
+          "sinSodio"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "TipoRecetaWithRelations"
+      },
+      "RecetasWithRelations": {
+        "title": "RecetasWithRelations",
+        "type": "object",
+        "description": "(tsType: RecetasWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "preparacion": {
+            "type": "string"
+          },
+          "tiempo": {
+            "type": "number"
+          },
+          "porciones": {
+            "type": "number"
+          },
+          "recetasXIngredientes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RecetasXIngredientesWithRelations"
+            }
+          },
+          "tipoRecetas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TipoRecetaWithRelations"
+            }
+          }
+        },
+        "required": [
+          "nombre",
+          "preparacion",
+          "tiempo",
+          "porciones"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "RecetasWithRelations"
+      },
+      "RecetasXIngredientesWithRelations": {
+        "title": "RecetasXIngredientesWithRelations",
+        "type": "object",
+        "description": "(tsType: RecetasXIngredientesWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "idIngrediente": {
+            "type": "string"
+          },
+          "cantidad": {
+            "type": "number"
+          },
+          "idReceta": {
+            "type": "string"
+          },
+          "idIngredientes": {
+            "type": "string"
+          },
+          "Recetas": {
+            "$ref": "#/components/schemas/RecetasWithRelations"
+          },
+          "Ingrediente": {
+            "$ref": "#/components/schemas/IngredientesWithRelations"
+          }
+        },
+        "required": [
+          "idIngrediente",
+          "cantidad"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "RecetasXIngredientesWithRelations"
+      },
+      "IngredientesWithRelations": {
+        "title": "IngredientesWithRelations",
+        "type": "object",
+        "description": "(tsType: IngredientesWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "calorias": {
+            "type": "number"
+          },
+          "colesterol": {
+            "type": "number"
+          },
+          "sodio": {
+            "type": "number"
+          },
+          "fibra": {
+            "type": "number"
+          },
+          "azucares": {
+            "type": "number"
+          },
+          "proteinas": {
+            "type": "number"
+          },
+          "grasasSaturadas": {
+            "type": "number"
+          },
+          "grasasTrans": {
+            "type": "number"
+          },
+          "recetasXIngredientes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RecetasXIngredientesWithRelations"
+            }
+          }
+        },
+        "required": [
+          "nombre",
+          "calorias",
+          "colesterol",
+          "sodio",
+          "fibra",
+          "azucares",
+          "proteinas",
+          "grasasSaturadas",
+          "grasasTrans"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "IngredientesWithRelations"
+      },
+      "IngredientesPartial": {
+        "title": "IngredientesPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Ingredientes>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "calorias": {
+            "type": "number"
+          },
+          "colesterol": {
+            "type": "number"
+          },
+          "sodio": {
+            "type": "number"
+          },
+          "fibra": {
+            "type": "number"
+          },
+          "azucares": {
+            "type": "number"
+          },
+          "proteinas": {
+            "type": "number"
+          },
+          "grasasSaturadas": {
+            "type": "number"
+          },
+          "grasasTrans": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Ingredientes>"
+      },
+      "NewRecetasXIngredientesInRecetas": {
+        "title": "NewRecetasXIngredientesInRecetas",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<RecetasXIngredientes, 'idReceta'>, 'idReceta'>, schemaOptions: { title: 'NewRecetasXIngredientesInRecetas', exclude: [ 'idReceta' ], optional: [ 'idReceta' ] })",
+        "properties": {
+          "idIngrediente": {
+            "type": "string"
+          },
+          "cantidad": {
+            "type": "number"
+          },
+          "idIngredientes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "idIngrediente",
+          "cantidad"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<RecetasXIngredientes, 'idReceta'>, 'idReceta'>"
+      },
+      "TipoReceta": {
+        "title": "TipoReceta",
+        "type": "object",
+        "properties": {
+          "esVegana": {
+            "type": "boolean"
+          },
+          "esVegetariana": {
+            "type": "boolean"
+          },
+          "esDiabetica": {
+            "type": "boolean"
+          },
+          "esRapida": {
+            "type": "boolean"
+          },
+          "esFitness": {
+            "type": "boolean"
+          },
+          "sinLactosa": {
+            "type": "boolean"
+          },
+          "sinGluten": {
+            "type": "boolean"
+          },
+          "sinSodio": {
+            "type": "boolean"
+          },
+          "idReceta": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "esVegana",
+          "esVegetariana",
+          "esDiabetica",
+          "esRapida",
+          "esFitness",
+          "sinLactosa",
+          "sinGluten",
+          "sinSodio"
+        ],
+        "additionalProperties": false
+      },
+      "NewTipoRecetaInRecetas": {
+        "title": "NewTipoRecetaInRecetas",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<TipoReceta, 'idReceta'>, 'idReceta'>, schemaOptions: { title: 'NewTipoRecetaInRecetas', exclude: [ 'idReceta' ], optional: [ 'idReceta' ] })",
+        "properties": {
+          "esVegana": {
+            "type": "boolean"
+          },
+          "esVegetariana": {
+            "type": "boolean"
+          },
+          "esDiabetica": {
+            "type": "boolean"
+          },
+          "esRapida": {
+            "type": "boolean"
+          },
+          "esFitness": {
+            "type": "boolean"
+          },
+          "sinLactosa": {
+            "type": "boolean"
+          },
+          "sinGluten": {
+            "type": "boolean"
+          },
+          "sinSodio": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "esVegana",
+          "esVegetariana",
+          "esDiabetica",
+          "esRapida",
+          "esFitness",
+          "sinLactosa",
+          "sinGluten",
+          "sinSodio"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<TipoReceta, 'idReceta'>, 'idReceta'>"
+      },
+      "TipoRecetaPartial": {
+        "title": "TipoRecetaPartial",
+        "type": "object",
+        "description": "(tsType: Partial<TipoReceta>, schemaOptions: { partial: true })",
+        "properties": {
+          "esVegana": {
+            "type": "boolean"
+          },
+          "esVegetariana": {
+            "type": "boolean"
+          },
+          "esDiabetica": {
+            "type": "boolean"
+          },
+          "esRapida": {
+            "type": "boolean"
+          },
+          "esFitness": {
+            "type": "boolean"
+          },
+          "sinLactosa": {
+            "type": "boolean"
+          },
+          "sinGluten": {
+            "type": "boolean"
+          },
+          "sinSodio": {
+            "type": "boolean"
+          },
+          "idReceta": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<TipoReceta>"
+      },
+      "Recetas": {
+        "title": "Recetas",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "preparacion": {
+            "type": "string"
+          },
+          "tiempo": {
+            "type": "number"
+          },
+          "porciones": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "nombre",
+          "preparacion",
+          "tiempo",
+          "porciones"
+        ],
+        "additionalProperties": false
+      },
+      "NewRecetasXIngredientes": {
+        "title": "NewRecetasXIngredientes",
+        "type": "object",
+        "description": "(tsType: Omit<RecetasXIngredientes, 'idReceta'>, schemaOptions: { title: 'NewRecetasXIngredientes', exclude: [ 'idReceta' ] })",
+        "properties": {
+          "idIngrediente": {
+            "type": "string"
+          },
+          "cantidad": {
+            "type": "number"
+          },
+          "idIngredientes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "idIngrediente",
+          "cantidad"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<RecetasXIngredientes, 'idReceta'>"
+      },
+      "NewRecetas": {
+        "title": "NewRecetas",
+        "type": "object",
+        "description": "(tsType: Omit<Recetas, 'id'>, schemaOptions: { title: 'NewRecetas', exclude: [ 'id' ] })",
+        "properties": {
+          "nombre": {
+            "type": "string"
+          },
+          "preparacion": {
+            "type": "string"
+          },
+          "tiempo": {
+            "type": "number"
+          },
+          "porciones": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "nombre",
+          "preparacion",
+          "tiempo",
+          "porciones"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Recetas, 'id'>"
+      },
+      "RecetasPartial": {
+        "title": "RecetasPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Recetas>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "preparacion": {
+            "type": "string"
+          },
+          "tiempo": {
+            "type": "number"
+          },
+          "porciones": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Recetas>"
+      },
+      "NewTipoReceta": {
+        "title": "NewTipoReceta",
+        "type": "object",
+        "description": "(tsType: Omit<TipoReceta, 'idReceta'>, schemaOptions: { title: 'NewTipoReceta', exclude: [ 'idReceta' ] })",
+        "properties": {
+          "esVegana": {
+            "type": "boolean"
+          },
+          "esVegetariana": {
+            "type": "boolean"
+          },
+          "esDiabetica": {
+            "type": "boolean"
+          },
+          "esRapida": {
+            "type": "boolean"
+          },
+          "esFitness": {
+            "type": "boolean"
+          },
+          "sinLactosa": {
+            "type": "boolean"
+          },
+          "sinGluten": {
+            "type": "boolean"
+          },
+          "sinSodio": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "esVegana",
+          "esVegetariana",
+          "esDiabetica",
+          "esRapida",
+          "esFitness",
+          "sinLactosa",
+          "sinGluten",
+          "sinSodio"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<TipoReceta, 'idReceta'>"
+      },
+      "loopback.Count": {
+        "type": "object",
+        "title": "loopback.Count",
+        "x-typescript-type": "@loopback/repository#Count",
+        "properties": {
+          "count": {
+            "type": "number"
+          }
+        }
+      },
+      "Ingredientes.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "Ingredientes.ScopeFilter"
+      },
+      "Ingredientes.IncludeFilter.Items": {
+        "title": "Ingredientes.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Ingredientes.ScopeFilter"
+          }
+        }
+      },
+      "Ingredientes.Filter": {
+        "type": "object",
+        "title": "Ingredientes.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "nombre": {
+                    "type": "boolean"
+                  },
+                  "calorias": {
+                    "type": "boolean"
+                  },
+                  "colesterol": {
+                    "type": "boolean"
+                  },
+                  "sodio": {
+                    "type": "boolean"
+                  },
+                  "fibra": {
+                    "type": "boolean"
+                  },
+                  "azucares": {
+                    "type": "boolean"
+                  },
+                  "proteinas": {
+                    "type": "boolean"
+                  },
+                  "grasasSaturadas": {
+                    "type": "boolean"
+                  },
+                  "grasasTrans": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "nombre",
+                    "calorias",
+                    "colesterol",
+                    "sodio",
+                    "fibra",
+                    "azucares",
+                    "proteinas",
+                    "grasasSaturadas",
+                    "grasasTrans"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Ingredientes.Fields"
+          },
+          "include": {
+            "title": "Ingredientes.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Ingredientes.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Ingredientes>"
+      },
+      "Ingredientes.Filter1": {
+        "type": "object",
+        "title": "Ingredientes.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Ingredientes.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "nombre": {
+                    "type": "boolean"
+                  },
+                  "calorias": {
+                    "type": "boolean"
+                  },
+                  "colesterol": {
+                    "type": "boolean"
+                  },
+                  "sodio": {
+                    "type": "boolean"
+                  },
+                  "fibra": {
+                    "type": "boolean"
+                  },
+                  "azucares": {
+                    "type": "boolean"
+                  },
+                  "proteinas": {
+                    "type": "boolean"
+                  },
+                  "grasasSaturadas": {
+                    "type": "boolean"
+                  },
+                  "grasasTrans": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "nombre",
+                    "calorias",
+                    "colesterol",
+                    "sodio",
+                    "fibra",
+                    "azucares",
+                    "proteinas",
+                    "grasasSaturadas",
+                    "grasasTrans"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Ingredientes.Fields"
+          },
+          "include": {
+            "title": "Ingredientes.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Ingredientes.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Ingredientes>"
+      },
+      "Recetas.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "Recetas.ScopeFilter"
+      },
+      "Recetas.IncludeFilter.Items": {
+        "title": "Recetas.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Recetas.ScopeFilter"
+          }
+        }
+      },
+      "Recetas.Filter": {
+        "type": "object",
+        "title": "Recetas.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "nombre": {
+                    "type": "boolean"
+                  },
+                  "preparacion": {
+                    "type": "boolean"
+                  },
+                  "tiempo": {
+                    "type": "boolean"
+                  },
+                  "porciones": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "nombre",
+                    "preparacion",
+                    "tiempo",
+                    "porciones"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Recetas.Fields"
+          },
+          "include": {
+            "title": "Recetas.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Recetas.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Recetas>"
+      },
+      "Recetas.Filter1": {
+        "type": "object",
+        "title": "Recetas.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Recetas.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "nombre": {
+                    "type": "boolean"
+                  },
+                  "preparacion": {
+                    "type": "boolean"
+                  },
+                  "tiempo": {
+                    "type": "boolean"
+                  },
+                  "porciones": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "nombre",
+                    "preparacion",
+                    "tiempo",
+                    "porciones"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Recetas.Fields"
+          },
+          "include": {
+            "title": "Recetas.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Recetas.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Recetas>"
+      },
+      "RecetasXIngredientes.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "RecetasXIngredientes.ScopeFilter"
+      },
+      "RecetasXIngredientes.IncludeFilter.Items": {
+        "title": "RecetasXIngredientes.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/RecetasXIngredientes.ScopeFilter"
+          }
+        }
+      },
+      "RecetasXIngredientes.Filter": {
+        "type": "object",
+        "title": "RecetasXIngredientes.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "idIngrediente": {
+                    "type": "boolean"
+                  },
+                  "cantidad": {
+                    "type": "boolean"
+                  },
+                  "idReceta": {
+                    "type": "boolean"
+                  },
+                  "idIngredientes": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "idIngrediente",
+                    "cantidad",
+                    "idReceta",
+                    "idIngredientes"
+                  ],
+                  "example": "idIngrediente"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "RecetasXIngredientes.Fields"
+          },
+          "include": {
+            "title": "RecetasXIngredientes.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/RecetasXIngredientes.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<RecetasXIngredientes>"
+      },
+      "RecetasXIngredientes.Filter1": {
+        "type": "object",
+        "title": "RecetasXIngredientes.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "RecetasXIngredientes.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "idIngrediente": {
+                    "type": "boolean"
+                  },
+                  "cantidad": {
+                    "type": "boolean"
+                  },
+                  "idReceta": {
+                    "type": "boolean"
+                  },
+                  "idIngredientes": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "idIngrediente",
+                    "cantidad",
+                    "idReceta",
+                    "idIngredientes"
+                  ],
+                  "example": "idIngrediente"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "RecetasXIngredientes.Fields"
+          },
+          "include": {
+            "title": "RecetasXIngredientes.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/RecetasXIngredientes.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<RecetasXIngredientes>"
+      },
+      "TipoReceta.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "TipoReceta.ScopeFilter"
+      },
+      "TipoReceta.IncludeFilter.Items": {
+        "title": "TipoReceta.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/TipoReceta.ScopeFilter"
+          }
+        }
+      },
+      "TipoReceta.Filter": {
+        "type": "object",
+        "title": "TipoReceta.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "esVegana": {
+                    "type": "boolean"
+                  },
+                  "esVegetariana": {
+                    "type": "boolean"
+                  },
+                  "esDiabetica": {
+                    "type": "boolean"
+                  },
+                  "esRapida": {
+                    "type": "boolean"
+                  },
+                  "esFitness": {
+                    "type": "boolean"
+                  },
+                  "sinLactosa": {
+                    "type": "boolean"
+                  },
+                  "sinGluten": {
+                    "type": "boolean"
+                  },
+                  "sinSodio": {
+                    "type": "boolean"
+                  },
+                  "idReceta": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "esVegana",
+                    "esVegetariana",
+                    "esDiabetica",
+                    "esRapida",
+                    "esFitness",
+                    "sinLactosa",
+                    "sinGluten",
+                    "sinSodio",
+                    "idReceta"
+                  ],
+                  "example": "esVegana"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "TipoReceta.Fields"
+          },
+          "include": {
+            "title": "TipoReceta.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/TipoReceta.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<TipoReceta>"
+      },
+      "TipoReceta.Filter1": {
+        "type": "object",
+        "title": "TipoReceta.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "TipoReceta.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "esVegana": {
+                    "type": "boolean"
+                  },
+                  "esVegetariana": {
+                    "type": "boolean"
+                  },
+                  "esDiabetica": {
+                    "type": "boolean"
+                  },
+                  "esRapida": {
+                    "type": "boolean"
+                  },
+                  "esFitness": {
+                    "type": "boolean"
+                  },
+                  "sinLactosa": {
+                    "type": "boolean"
+                  },
+                  "sinGluten": {
+                    "type": "boolean"
+                  },
+                  "sinSodio": {
+                    "type": "boolean"
+                  },
+                  "idReceta": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "esVegana",
+                    "esVegetariana",
+                    "esDiabetica",
+                    "esRapida",
+                    "esFitness",
+                    "sinLactosa",
+                    "sinGluten",
+                    "sinSodio",
+                    "idReceta"
+                  ],
+                  "example": "esVegana"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "TipoReceta.Fields"
+          },
+          "include": {
+            "title": "TipoReceta.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/TipoReceta.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<TipoReceta>"
+      }
+    }
+  }
+}
